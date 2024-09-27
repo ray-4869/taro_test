@@ -9,12 +9,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/api/categoris")
 public class CategoryController {
     public final CategoryService categoryService;
 
-    @GetMapping
-    public List<Category> getCategoris () {
-        return this.categoryService.getAllCategory();
-    }
 }

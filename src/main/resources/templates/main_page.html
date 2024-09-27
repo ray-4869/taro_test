@@ -1,27 +1,69 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <nav th:replace="~{navbar :: navbarFragment}"></nav>
 <!DOCTYPE html>
-<html layout:decorate="~{layout}">
+<html lang="ko">
 <head>
-    <title>타로 웹</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .card {
+         transition: transform 0.8s ease;
+         cursor: pointer;
+         margin: 40px;
+     }
+
+     .card:hover {
+         transform: translateY(-15px); /* 카드 호버 시 높이 조정 */
+     }
+
+     .card-container {
+         display: flex;
+         justify-content: center; /* 카드들을 가운데 정렬 */
+         align-items: flex-start; /* 카드들을 위쪽 정렬 */
+         height: 100vh; /* 전체 화면 높이에 맞춤 */
+         gap: 40px;
+     }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 수직 중앙 정렬 */
+        align-items: center; /* 수평 중앙 정렬 */
+        height: 100%; /* 카드 높이 맞추기 */
+    }
+
+    .card-title {
+        margin-top: 350px; /* 원하는 만큼 위로 이동 */
+    }
+        .background {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fkr.freepik.com%2Fpremium-photo%2Fserene-dreamy-background-digital-art-illustration-generative-ai_40953090.htm&psig=AOvVaw30-wxgtyy4khW5QlLTKWwB&ust=1727498963399000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDDzqep4ogDFQAAAAAdAAAAABAJ');
+    background-size: cover; /* 전체 요소에 맞게 이미지 크기 조정 */
+    height: 500px; /* 원하는 높이 설정 */
+    }
+    </style>
+    <title>타로 카드</title>
 </head>
 <body>
-<div class="container my-3">
-    <div class="row">
-        <div class="col-md-3">
-            <!-- 카테고리 리스트 -->
-            <h5>카테고리</h5>
-            <ul class="category-list">
-                <li class="category-item">카테고리 1</li>
-                <li class="category-item">카테고리 2</li>
-                <li class="category-item">카테고리 3</li>
-                <li class="category-item">카테고리 4</li>
-            </ul>
-        </div>
-        <div class="col-md-9">
-            <!-- 메인 콘텐츠 -->
-            <h1>메인 페이지</h1>
-            <p>여기에 메인 콘텐츠가 표시됩니다.</p>
+<div class="background">
+    <div class="container mt-5">
+        <div class="card-container d-flex justify-content-conter">
+            <div class="card m-2" style="width: 23rem; height: 36rem;">
+                <a href="/main/view" class="card-body">
+                    <h5 class="card-title">오늘의 운세</h5>
+                    <button class="btn btn-primary">입장</button>
+                </a>
+            </div>
+            <div class="card m-2" style="width: 23rem; height: 36rem;">
+                <a href="/main/history" class="card-body">
+                    <h5 class="card-title">히스토리</h5>
+                    <button class="btn btn-primary">입장</button>
+                </a>
+            </div>
+            <div class="card m-2" style="width: 23rem; height: 36rem;">
+                <a href="/main/feedback" class="card-body">
+                    <h5 class="card-title">후기</h5>
+                    <button class="btn btn-primary">입장</button>
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -14,11 +14,6 @@ public class Tarot {
         return "main_page";
     }
 
-    @GetMapping("/view")
-    public String viewTarot () {
-        return "view_page";
-    }
-
     @GetMapping("/history")
     public String historyTarot() {
         return "history_page";

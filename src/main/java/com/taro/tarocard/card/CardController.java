@@ -15,13 +15,8 @@ import java.util.List;
 public class CardController {
     private final CardService cardService;
 
-    @GetMapping
-    public List<Card> getCard() {
-        return this.cardService.getCard();
-    }
-
-    @GetMapping("/{id}")
-    public Card getCardById (@PathVariable("id") Integer id) {
+    @GetMapping("/love/{id}")
+    public Card getCardById (@PathVariable("id") Integer id, Model model) {
         return this.cardService.getCardById(id);
     }
 
